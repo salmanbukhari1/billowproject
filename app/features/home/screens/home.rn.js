@@ -3,8 +3,7 @@ import Toast from 'react-native-simple-toast';
 import { Text, View, TouchableOpacity, StyleSheet, Button } from "react-native";
 import PropTypes from "prop-types";
 import Counter from "../../../components/counter";
-
-
+import BaseStyles from '../../../themes/BaseStyles';
 
 export default class Home extends Component {
 
@@ -35,9 +34,9 @@ export default class Home extends Component {
 
 
   	return (
-  		<View style={{alignItems: 'center', justifyContent: 'center', }}>
-        <Text style={{marginBottom: 30, fontSize: 30, textAlign: 'center', paddingLeft: 10, paddingRight: 10}}>Go ahead! Test the counter to its limits</Text>
-  			<View style={{marginBottom: 10}}>
+  		<View style={BaseStyles.centerContent}>
+        <Text style={[BaseStyles.mainTitle]}>Go ahead! Test the counter to its limits</Text>
+  			<View style={BaseStyles.baseMarginBottom}>
           <Counter initialValue={this.state.counterValue} onChange={this.onChange.bind(this)}   />
         </View>
         <Button title="Second Page" onPress={this.goToSEcondPage} />

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import Toast from 'react-native-simple-toast';
 import { Text, View, TouchableOpacity, StyleSheet, Button } from "react-native";
+import BaseStyles from '../../../themes/BaseStyles';
 
 
 export default class SecondPage extends Component {
@@ -30,7 +31,7 @@ componentDidMount(){
 
   	return (
   		<View>
-  			<Text style={{marginBottom: 10}}>Value of the counter from home page {counterValue}</Text>
+  			<Text style={BaseStyles.baseMarginBottom}>Value of the counter from home page {counterValue}</Text>
         <Button title="Go Back" onPress={this.goHome} />
   		</View>
   	)
