@@ -134,13 +134,13 @@ export default class Counter extends Component {
 
     return (
       <View style={Styles.container}>
-        <View>{this.renderMinusButton()}</View>
+        <View>{this.renderDecrementAction()}</View>
         <View style={Styles.value}>
           <Text style={[Styles.text, { color: this.props.textColor }]}>
             {value}
           </Text>
         </View>
-        <View>{this.renderPlusButton()}</View>
+        <View>{this.renderIncrementAction()}</View>
       </View>
     );
   }
@@ -152,13 +152,13 @@ const Styles = StyleSheet.create({
   },
 
   text: {
-    fontSize: 16,
+    fontSize: 30,
     paddingLeft: 15,
     paddingRight: 15
   },
 
   iconText: {
-    fontSize: 22,
+    fontSize: 30,
     marginTop: -3
   },
 
@@ -169,9 +169,9 @@ const Styles = StyleSheet.create({
   },
 
   touchable: {
-    width: 35,
-    height: 26,
-    borderWidth: 1,
+    width: 40,
+    height: 40,
+    borderWidth: 2,
     borderRadius: 15,
     alignItems: "center",
     justifyContent: "center"

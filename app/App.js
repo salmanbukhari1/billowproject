@@ -10,39 +10,55 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
   StatusBar,
 } from 'react-native';
 
 import {
-  Header,
-  LearnMoreLinks,
+  
   Colors,
-  DebugInstructions,
-  ReloadInstructions,
+  
 } from 'react-native/Libraries/NewAppScreen';
 
-import Counter from "./components/counter"
+import {Dimensions} from 'react-native';
+
+
+import {NativeRouter, Switch, Route, Link} from "react-router-native";
+import Home from "./features/home/screens/home.rn";
+import SecondPage from "./features/secondpage/screens/secondpage.rn";
+
+import {BrowserHistory} from 'history';
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const App: () => React$Node = () => {
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        
-          <Header />
-          <View>
+      <SafeAreaView style={{flex: 1}}>
+          <NativeRouter>
+            <View style={[styles.container]}>
+              <View style={{justifyContent: 'center', alignItems: 'center', height: windowHeight}}>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/secondpage" component={SecondPage} />
+              </View>
+            </View>
+          </NativeRouter>
             
-          </View>
-        
       </SafeAreaView>
     </>
   );
 };
 
 const styles = StyleSheet.create({
+
+  container: {
+    
+    flex: 1,
+  },
+
   scrollView: {
     backgroundColor: Colors.lighter,
   },
